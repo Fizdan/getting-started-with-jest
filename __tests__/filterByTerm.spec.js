@@ -1,9 +1,5 @@
-function filterByTerm(inputArr, searchTerm) {
-    return inputArr.filter(function(arrayElement) {
-      return arrayElement.url.match(searchTerm);
-    });
-  }
-  
+const filterByTerm = require("../src/filterByTerm");
+
   describe("Filter function", () => {
     test("it should filter by a search term (link)", () => {
       const input = [
@@ -12,8 +8,8 @@ function filterByTerm(inputArr, searchTerm) {
         { id: 3, url: "https://www.link3.dev" }
       ];
   
-      const output = [{ id: 3, url: "https://www.link3.dev" }];
+      const output = [{ id: 1, url: "https://www.url1.dev" }];
   
-      expect(filterByTerm(input, "link")).toEqual(output);
+      expect(filterByTerm(input, "url1")).toEqual(output);
     });
   });
